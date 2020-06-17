@@ -1,0 +1,10 @@
+D:\Code\c_sharp\ComPort Tool\ComPort Tool\bin\Debug\ComPort Tool.exe.config
+D:\Code\c_sharp\ComPort Tool\ComPort Tool\bin\Debug\ComPort Tool.exe
+D:\Code\c_sharp\ComPort Tool\ComPort Tool\bin\Debug\ComPort Tool.pdb
+D:\Code\c_sharp\ComPort Tool\ComPort Tool\obj\Debug\ComPort Tool.csprojAssemblyReference.cache
+D:\Code\c_sharp\ComPort Tool\ComPort Tool\obj\Debug\ComPort_Tool.Form1.resources
+D:\Code\c_sharp\ComPort Tool\ComPort Tool\obj\Debug\ComPort_Tool.Properties.Resources.resources
+D:\Code\c_sharp\ComPort Tool\ComPort Tool\obj\Debug\ComPort Tool.csproj.GenerateResource.cache
+D:\Code\c_sharp\ComPort Tool\ComPort Tool\obj\Debug\ComPort Tool.csproj.CoreCompileInputs.cache
+D:\Code\c_sharp\ComPort Tool\ComPort Tool\obj\Debug\ComPort Tool.exe
+D:\Code\c_sharp\ComPort Tool\ComPort Tool\obj\Debug\ComPort Tool.pdb
