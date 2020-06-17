@@ -10,6 +10,7 @@ using System.IO.Ports;
 using System.IO;
 using System.Windows.Forms;
 using System.Threading;
+using System.Drawing;
 
 namespace ComPort_Tool
 {
@@ -63,16 +64,24 @@ namespace ComPort_Tool
                 serialPort1.Open();
                 if (serialPort1.IsOpen)
                 {
-                    Console.WriteLine("通訊阜" + comboBox_Port.Text + "開啟!");
+                    Console.WriteLine("comport " + comboBox_Port.Text + " is open.");
+                    // set button text color to green
+                    this.button_Open.ForeColor = System.Drawing.Color.Green;
+                    //this.button_Open.BackColor = System.Drawing.Color.Green;
+                    button_Open.Text = "Close";
                 }
                 else
                 {
-                    Console.WriteLine("通訊阜" + comboBox_Port.Text + "開啟失敗");
+                    Console.WriteLine("comport " + comboBox_Port.Text + " is not open.");
                 }
             }
             else
             {
-                Console.WriteLine("通訊阜" + comboBox_Port.Text + "已開啟");
+                serialPort1.Close();
+                button_Open.Text = "Open";
+                this.button_Open.ForeColor = System.Drawing.Color.Black;
+                Console.WriteLine("comport " + comboBox_Port.Text + " is close.");
+
             }
         }
         private void comport_DataReceived(Object sender, SerialDataReceivedEventArgs e)
