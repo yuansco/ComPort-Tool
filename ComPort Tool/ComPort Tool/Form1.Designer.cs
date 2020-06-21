@@ -43,6 +43,8 @@
             this.checkBox_Auto_New_Line = new System.Windows.Forms.CheckBox();
             this.checkBox_Time_Tag = new System.Windows.Forms.CheckBox();
             this.checkBox_Hex_Mode = new System.Windows.Forms.CheckBox();
+            this.checkBox_Bin_Mode = new System.Windows.Forms.CheckBox();
+            this.checkBox_ASCII_Mode = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button_Open
@@ -50,7 +52,7 @@
             this.button_Open.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Open.Location = new System.Drawing.Point(403, 154);
             this.button_Open.Name = "button_Open";
-            this.button_Open.Size = new System.Drawing.Size(121, 36);
+            this.button_Open.Size = new System.Drawing.Size(136, 36);
             this.button_Open.TabIndex = 1;
             this.button_Open.Text = "Open";
             this.button_Open.UseVisualStyleBackColor = true;
@@ -79,7 +81,7 @@
             this.button_Clear.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Clear.Location = new System.Drawing.Point(403, 196);
             this.button_Clear.Name = "button_Clear";
-            this.button_Clear.Size = new System.Drawing.Size(121, 36);
+            this.button_Clear.Size = new System.Drawing.Size(136, 36);
             this.button_Clear.TabIndex = 5;
             this.button_Clear.Text = "Clear";
             this.button_Clear.UseVisualStyleBackColor = true;
@@ -90,7 +92,7 @@
             this.button_Save.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Save.Location = new System.Drawing.Point(403, 238);
             this.button_Save.Name = "button_Save";
-            this.button_Save.Size = new System.Drawing.Size(121, 36);
+            this.button_Save.Size = new System.Drawing.Size(136, 36);
             this.button_Save.TabIndex = 7;
             this.button_Save.Text = "Save";
             this.button_Save.UseVisualStyleBackColor = true;
@@ -101,7 +103,7 @@
             this.button_Write.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Write.Location = new System.Drawing.Point(403, 322);
             this.button_Write.Name = "button_Write";
-            this.button_Write.Size = new System.Drawing.Size(121, 36);
+            this.button_Write.Size = new System.Drawing.Size(136, 36);
             this.button_Write.TabIndex = 8;
             this.button_Write.Text = "Write";
             this.button_Write.UseVisualStyleBackColor = true;
@@ -112,7 +114,7 @@
             this.button_Exit.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Exit.Location = new System.Drawing.Point(403, 280);
             this.button_Exit.Name = "button_Exit";
-            this.button_Exit.Size = new System.Drawing.Size(121, 36);
+            this.button_Exit.Size = new System.Drawing.Size(136, 36);
             this.button_Exit.TabIndex = 9;
             this.button_Exit.Text = "Exit";
             this.button_Exit.UseVisualStyleBackColor = true;
@@ -124,7 +126,7 @@
             this.comboBox_Port.FormattingEnabled = true;
             this.comboBox_Port.Location = new System.Drawing.Point(403, 12);
             this.comboBox_Port.Name = "comboBox_Port";
-            this.comboBox_Port.Size = new System.Drawing.Size(121, 27);
+            this.comboBox_Port.Size = new System.Drawing.Size(136, 27);
             this.comboBox_Port.TabIndex = 10;
             this.comboBox_Port.Click += new System.EventHandler(this.comboBox_Port_Click);
             this.comboBox_Port.MouseEnter += new System.EventHandler(this.comboBox_Port_MouseEnter);
@@ -135,13 +137,13 @@
             this.comboBox_BaudRate.FormattingEnabled = true;
             this.comboBox_BaudRate.Location = new System.Drawing.Point(403, 45);
             this.comboBox_BaudRate.Name = "comboBox_BaudRate";
-            this.comboBox_BaudRate.Size = new System.Drawing.Size(121, 27);
+            this.comboBox_BaudRate.Size = new System.Drawing.Size(136, 27);
             this.comboBox_BaudRate.TabIndex = 11;
             // 
             // checkBox_Auto_New_Line
             // 
             this.checkBox_Auto_New_Line.AutoSize = true;
-            this.checkBox_Auto_New_Line.Location = new System.Drawing.Point(405, 82);
+            this.checkBox_Auto_New_Line.Location = new System.Drawing.Point(480, 78);
             this.checkBox_Auto_New_Line.Name = "checkBox_Auto_New_Line";
             this.checkBox_Auto_New_Line.Size = new System.Drawing.Size(59, 16);
             this.checkBox_Auto_New_Line.TabIndex = 12;
@@ -151,7 +153,7 @@
             // checkBox_Time_Tag
             // 
             this.checkBox_Time_Tag.AutoSize = true;
-            this.checkBox_Time_Tag.Location = new System.Drawing.Point(405, 104);
+            this.checkBox_Time_Tag.Location = new System.Drawing.Point(480, 100);
             this.checkBox_Time_Tag.Name = "checkBox_Time_Tag";
             this.checkBox_Time_Tag.Size = new System.Drawing.Size(69, 16);
             this.checkBox_Time_Tag.TabIndex = 13;
@@ -161,18 +163,43 @@
             // checkBox_Hex_Mode
             // 
             this.checkBox_Hex_Mode.AutoSize = true;
-            this.checkBox_Hex_Mode.Location = new System.Drawing.Point(405, 127);
+            this.checkBox_Hex_Mode.Location = new System.Drawing.Point(403, 100);
             this.checkBox_Hex_Mode.Name = "checkBox_Hex_Mode";
             this.checkBox_Hex_Mode.Size = new System.Drawing.Size(73, 16);
             this.checkBox_Hex_Mode.TabIndex = 14;
             this.checkBox_Hex_Mode.Text = "Hex Mode";
             this.checkBox_Hex_Mode.UseVisualStyleBackColor = true;
+            this.checkBox_Hex_Mode.CheckedChanged += new System.EventHandler(this.checkBox_Hex_Mode_CheckedChanged);
+            // 
+            // checkBox_Bin_Mode
+            // 
+            this.checkBox_Bin_Mode.AutoSize = true;
+            this.checkBox_Bin_Mode.Location = new System.Drawing.Point(403, 78);
+            this.checkBox_Bin_Mode.Name = "checkBox_Bin_Mode";
+            this.checkBox_Bin_Mode.Size = new System.Drawing.Size(71, 16);
+            this.checkBox_Bin_Mode.TabIndex = 15;
+            this.checkBox_Bin_Mode.Text = "Bin Mode";
+            this.checkBox_Bin_Mode.UseVisualStyleBackColor = true;
+            this.checkBox_Bin_Mode.CheckedChanged += new System.EventHandler(this.checkBox_Bin_Mode_CheckedChanged);
+            // 
+            // checkBox_ASCII_Mode
+            // 
+            this.checkBox_ASCII_Mode.AutoSize = true;
+            this.checkBox_ASCII_Mode.Location = new System.Drawing.Point(403, 122);
+            this.checkBox_ASCII_Mode.Name = "checkBox_ASCII_Mode";
+            this.checkBox_ASCII_Mode.Size = new System.Drawing.Size(84, 16);
+            this.checkBox_ASCII_Mode.TabIndex = 16;
+            this.checkBox_ASCII_Mode.Text = "ASCII Mode";
+            this.checkBox_ASCII_Mode.UseVisualStyleBackColor = true;
+            this.checkBox_ASCII_Mode.CheckedChanged += new System.EventHandler(this.checkBox_ASCII_Mode_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(537, 370);
+            this.ClientSize = new System.Drawing.Size(551, 370);
+            this.Controls.Add(this.checkBox_ASCII_Mode);
+            this.Controls.Add(this.checkBox_Bin_Mode);
             this.Controls.Add(this.checkBox_Hex_Mode);
             this.Controls.Add(this.checkBox_Time_Tag);
             this.Controls.Add(this.checkBox_Auto_New_Line);
@@ -207,6 +234,8 @@
         private System.Windows.Forms.CheckBox checkBox_Auto_New_Line;
         private System.Windows.Forms.CheckBox checkBox_Time_Tag;
         private System.Windows.Forms.CheckBox checkBox_Hex_Mode;
+        private System.Windows.Forms.CheckBox checkBox_Bin_Mode;
+        private System.Windows.Forms.CheckBox checkBox_ASCII_Mode;
     }
 }
 
